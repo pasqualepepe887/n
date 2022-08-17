@@ -1,6 +1,6 @@
 Flask==2.2.2
 gunicorn==20.1.0
-JPype>=1-1.4.0
+JPype>=1.4.0
 aspose-cells>=22.8.0
 et-xmlfile>=1.1.0 
 lml>=0.1.0 

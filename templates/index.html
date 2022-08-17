@@ -129,8 +129,8 @@
           label.innerHTML=files[0].name;
             console.log("Caricamento di: " + files[0].name);
             var filenametot = files[0].name;
-            var filename = filenametot.substr(-4); 
-            if (filename == ".xls"){
+            var filename = filenametot.substr(-5); 
+            if (filename == ".xlsx"){
                 console.log("AVVIO CONVERSIONE FILE XLS")
                 document.getElementById("startconnection").submit();
 

@@ -79,7 +79,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/index2.html', methods = ['GET', 'POST'])
+@app.route('/', methods = ['GET', 'POST'])
 def hello():
    
 
@@ -129,7 +129,7 @@ def hello():
    
 	
 if __name__ == '__main__':
-   app.run(debug = False,host="0.0.0.0")
+   app.run(debug=False,host="0.0.0.0")
   # jpype.shutdownJVM()	
 
    

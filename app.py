@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 import pandas as pd
-import  jpype     
+#import  jpype     
 import  asposecells   
 import vobject
 import email, smtplib, ssl
@@ -11,7 +11,7 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import datetime
-jpype.startJVM()
+#jpype.startJVM()
 
 
 
@@ -27,7 +27,7 @@ def write_vcard(f, vcard):
 
 def converti(file_xls): 
     
-    from asposecells.api import Workbook
+   # from asposecells.api import Workbook
     workbook = Workbook(file_xls)
     workbook.save("file_converted.xlsx")
     
@@ -88,8 +88,8 @@ def hello():
       if f and allowed_file(f.filename):
 
          f.save(secure_filename(f.filename))
-         converti(f.filename)
-         df = pd.read_excel('file_converted.xlsx', usecols="o,p,n,m")   #o = full_name / p = phone
+         #converti(f.filename)
+         df = pd.read_excel(f.filename, usecols="o,p,n,m")   #o = full_name / p = phone
          rows_count = df.count()[0]
          print(df)
          vcard = [""]
@@ -130,6 +130,6 @@ def hello():
 	
 if __name__ == '__main__':
    app.run(debug = False,host="0.0.0.0")
-   jpype.shutdownJVM()	
+  # jpype.shutdownJVM()	
 
    
